@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-header"></div>
+  <div class="col-md-4">
+    <input *ngIf="config.filtering" placeholder="Filter tout les colonnes" [ngTableFiltering]="config.filtering" class="form-control"
+      (tableChanged)="onChangeTable(config)" />
+  </div>
+<br>
+<ng-table [config]="config" (tableChanged)="onChangeTable(config)" (cellClicked)="onCellClick($event)" [rows]="rows" [columns]="columns">
+</ng-table>
+
+</div>
